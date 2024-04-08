@@ -54,14 +54,14 @@ password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
     print("Contraseña no válida")
-    os.system("salir")
+    os.system("exit")
 else:
     prefix = "/data/data/com.termux/files/usr"
     home = "/data/data/com.termux/files/home"
     motd = False
     hush = False
 
-    os.system("limpiar")
+    os.system("clear")
 
     try:
         open(prefix + "/etc/motd")
