@@ -14,15 +14,15 @@ password = password.encode()
 password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
-    print("Invalid password")
-    os.system("exit")
+    print("Contraseña no válida")
+    os.system("salir")
 else:
     prefix = "/data/data/com.termux/files/usr"
     home = "/data/data/com.termux/files/home"
     motd = False
     hush = False
 
-    os.system("clear")
+    os.system("limpiar")
 
     try:
         open(prefix + "/etc/motd")
