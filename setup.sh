@@ -9,16 +9,16 @@ mkdir /data/data/com.termux/files/usr/share/login/
 clear
 
 #TODO: hide input
-read -p "Enter new password: " passone;
-read -p "Repeat password: " passtwo;
+read -p "Introduzca una nueva contraseña: " passone;
+read -p "Repita la contraseña: " passtwo;
 
 if [ $passone = $passtwo ];
 then
 	touch /data/data/com.termux/files/usr/share/login/.pass
 	python -c "import hashlib; print(hashlib.sha1(b'$passone').hexdigest())" > /data/data/com.termux/files/usr/share/login/.pass
-	echo 'Login installed'
+	echo 'Inicio de sesión instalado'
 
 elif [ $passone != $passtwo ];
 then
-	echo 'Password dont match'
+	echo 'La contraseña no coincide'
 fi
